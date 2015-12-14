@@ -26,7 +26,7 @@ public class SseventApplicationTests {
     public void oneClient() {
         Client client = ClientBuilder.newBuilder()
                 .register(SseFeature.class).build();
-        WebTarget target = client.target("http://localhost:8080/events");
+        WebTarget target = client.target("http://localhost:8080/event");
 
         EventInput eventInput = target.request().get(EventInput.class);
         while (!eventInput.isClosed()) {

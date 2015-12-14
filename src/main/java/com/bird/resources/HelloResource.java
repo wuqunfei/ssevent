@@ -1,4 +1,4 @@
-package com.bird;
+package com.bird.resources;
 
 import org.springframework.stereotype.Component;
 
