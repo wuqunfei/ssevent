@@ -1,0 +1,42 @@
+entity Person{
+	firstName String 
+    lastName String
+    formatName String required
+    
+    xingId String
+    xingUrl String
+    linkedInId String
+    linkedInUrl String 
+    personType PersonType
+}
+
+
+enum PersonType {
+  OPENESS, CONSCIENTIONSNESS, EXTRAVERSION, AGREEABLENESS, NEUROTICISM
+}
+
+entity User{
+	email String
+	password String
+}
+
+relationship OneToOne {
+	User{person} to Person
+}
+
+entity Organization{
+	 linkedInOrgId String
+     xingOrgId String
+     linkedInOrgUrl String
+     xingOrgUrl String
+}
+
+relationship ManyToOne {
+	User{organization} to Organization
+}
+
+
+
+
+
+
